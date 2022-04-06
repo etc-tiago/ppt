@@ -1,8 +1,10 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require("puppeteer");
 
 (async () => {
   const browser = await puppeteer.launch({
-    executablePath: '../../node_modules/puppeteer/.local-chromium/linux-970485/chrome-linux/chrome',
+    executablePath:
+      "/usr/bin/chromium-browser" ||
+      "../../node_modules/puppeteer/.local-chromium/linux-970485/chrome-linux",
     headless: true,
   });
   this.browser = await browser.newPage();
@@ -10,5 +12,4 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
 
   await browser.close();
-})()
-
+})();
